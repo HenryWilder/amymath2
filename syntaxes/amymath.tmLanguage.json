@@ -1,0 +1,150 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "AmyMath",
+	"patterns": [
+		{
+			"include": "#relationships"
+		},
+		{
+			"include": "#declarations"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"relationships": {
+			"patterns": [
+				{
+					"name": "keyword.control.amymath",
+					"match": "\\b(?:in)\\b|<=/=>|<=>|<=/=|=/=>|<=|=>|!=|<=|>=|<|>|=|/\\\\|\\\\/"
+				}
+			]
+		},
+		"declarations": {
+			"patterns": [
+				{
+					"name": "keyword",
+					"begin": "\\bconst\\b",
+					"end": "\\b(?:is|are)\\b|$",
+					"patterns": [
+						{
+							"name": "keyword.operator",
+							"match": ",\\s*"
+						},
+						{
+							"name": "variable.other.constant",
+							"match": "\\b[a-cf-zA-Z]\\b"
+						}
+					]
+				},
+				{
+					"name": "keyword",
+					"begin": "\\blet\\b",
+					"end": "\\bbe\\b|$",
+					"patterns": [
+						{
+							"name": "keyword.operator",
+							"match": ",\\s*"
+						},
+						{
+							"name": "variable",
+							"match": "\\b[a-cf-zA-Z]\\b"
+						}
+					]
+				},
+				{
+					"name": "keyword",
+					"begin": "\\bfn\\b",
+					"end": "$",
+					"patterns": [
+						{
+							"name": "keyword.operator",
+							"match": ",\\s*"
+						},
+						{
+							"name": "entity.name.function",
+							"match": "\\b[a-cf-zA-Z]\\b"
+						}
+					]
+				}
+			]
+		},
+		"types": {
+			"name": "entity.name.class",
+			"match": "\\b(?:Natural|ℕ|Integer|ℤ|Rational|ℚ|Real|ℝ|Complex|ℂ)\\b"
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "entity.name.tag",
+					"begin": "^\\s*@[a-zA-Z_\\-0-9]+",
+					"end": "$",
+					"patterns": [
+						{
+							"name": "string.unquoted",
+							"match": ".+"
+						}
+					]
+				},
+				{
+					"name": "markup.heading",
+					"begin": "^\\s*#+ ",
+					"end": "$"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "entity.name.function",
+					"match": "d(?:\\^(\\-?[0-9]+))?/d([a-zA-Z]|theta|θ|phi|ϕ|psi|ψ)(?:\\^(\\-?[0-9]+))?\\b",
+					"captures": {
+						"1": {
+							"name": "constant.numeric"
+						},
+						"2": {
+							"name": "variable.parameter"
+						},
+						"3": {
+							"name": "constant.numeric"
+						}
+					}
+				},
+				{
+					"name": "entity.name.function",
+					"match": "'+"
+				},
+				{
+					"name": "keyword",
+					"match": "(?:\\+/\\-|\\-/\\+)|[\\+\\-\\*/\\^]|\\b(?:sqrt)\\b"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "[a-zA-Z](?=(?:\\^\\-?[0-9]+|'*)\\()|\\b(?:log|ln|sum|prod|(?:(?:a(?:rc)?)?(?:sin|cos|tan|csc|sec|cot)h?))\\b"
+				}
+			]
+		},
+		"variables": {
+			"name": "variable.name",
+			"match": "\\b(?:[a-zA-Z]|theta|θ|phi|ϕ|psi|ψ)\\b"
+		},
+		"numbers": {
+			"name": "constant.numeric",
+			"match": "[0-9]+|\\b(?:e|pi|π|varphi|φ)\\b"
+		}
+	},
+	"scopeName": "source.amymath"
+}

@@ -1,0 +1,54 @@
+{
+    "Theta": {
+        "prefix": ["theta", "@q"],
+        "body": ["θ"]
+    },
+    "Phi": {
+        "prefix": ["phi", "@f"],
+        "body": ["ϕ"]
+    },
+    "Psi": {
+        "prefix": ["psi", "@y"],
+        "body": ["ψ"]
+    },
+    "Natural": {
+        "prefix": ["\\N"],
+        "body": ["ℕ"]
+    },
+    "Integer": {
+        "prefix": ["\\Z"],
+        "body": ["ℤ"]
+    },
+    "Rational": {
+        "prefix": ["\\Q"],
+        "body": ["ℚ"]
+    },
+    "Real": {
+        "prefix": ["\\R"],
+        "body": ["ℝ"]
+    },
+    "Complex": {
+        "prefix": ["\\C"],
+        "body": ["ℂ"]
+    },
+    "Golden Ratio": {
+        "prefix": ["varphi", "@vf"],
+        "body": ["φ"]
+    },
+    "Pi": {
+        "prefix": ["pi", "@p"],
+        "body": ["π"]
+    },
+    "Leibniz Derivative": {
+        "prefix": ["d"],
+        "body": ["d${2:^n}/d${1:x}${2:^n}$0"]
+    },
+    "Declare Function": {
+        "prefix": ["fun"],
+        "body": ["fn ${1:f}(${2:x})$0"]
+    },
+    "Declare Variable": {
+        "prefix": ["def"],
+        "body": ["${1|let,const|} ${2:f} in ${3|Real,Integer,Rational,Natural,Complex|}$0"]
+    }
+}

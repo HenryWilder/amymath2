@@ -1,0 +1,35 @@
+{
+  "name": "amymath",
+  "displayName": "amymath",
+  "description": "Syntax highlighting for .math preprocessor files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "amymath",
+        "aliases": ["AmyMath", "amymath"],
+        "extensions": [".math"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "amymath",
+        "scopeName": "source.amymath",
+        "path": "./syntaxes/amymath.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "amymath",
+        "path": "./snippets.json"
+      }
+    ]
+  }
+}
