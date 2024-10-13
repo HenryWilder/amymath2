@@ -1,10 +1,13 @@
 {
   "name": "amymath",
-  "displayName": "amymath",
+  "displayName": "AmyMath",
   "description": "Syntax highlighting for .math preprocessor files",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.94.0"
+  },
+  "repository": {
+    "url": "https://github.com/HenryWilder/amymath2"
   },
   "categories": [
     "Programming Languages"

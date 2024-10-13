@@ -29,7 +29,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.amymath",
-					"match": "\\b(?:in)\\b|<=/=>|<=>|<=/=|=/=>|<=|=>|!=|<=|>=|<|>|=|/\\\\|\\\\/"
+					"match": "\\b(?:in|where)\\b|<=/=>|<=>|<=/=|=/=>|<=|=>|!=|<=|>=|<|>|=|/\\\\|\\\\/"
 				}
 			]
 		},
@@ -84,7 +84,7 @@
 		},
 		"types": {
 			"name": "entity.name.class",
-			"match": "\\b(?:Natural|ℕ|Integer|ℤ|Rational|ℚ|Real|ℝ|Complex|ℂ)\\b"
+			"match": "\\b(?:Natural|ℕ|Integer|ℤ|Rational|ℚ|Real|ℝ|Complex|ℂ|\\.\\.)\\b"
 		},
 		"comments": {
 			"patterns": [
@@ -102,6 +102,11 @@
 				{
 					"name": "markup.heading",
 					"begin": "^\\s*#+ ",
+					"end": "$"
+				},
+				{
+					"name": "comment.line",
+					"begin": "%",
 					"end": "$"
 				}
 			]
@@ -129,11 +134,11 @@
 				},
 				{
 					"name": "keyword",
-					"match": "(?:\\+/\\-|\\-/\\+)|[\\+\\-\\*/\\^]|\\b(?:sqrt)\\b"
+					"match": "(?:\\+/\\-|\\-/\\+)|[\\+\\-\\*/\\^]|\\b(?:sum|prod|sqrt|choose)\\b"
 				},
 				{
 					"name": "entity.name.function",
-					"match": "[a-zA-Z](?=(?:\\^\\-?[0-9]+|'*)\\()|\\b(?:log|ln|sum|prod|(?:(?:a(?:rc)?)?(?:sin|cos|tan|csc|sec|cot)h?))\\b"
+					"match": "\\b[a-zA-Z](?=(?:\\^\\-?[0-9]+|'*)\\()|\\b(?:log|ln|(?:(?:a(?:rc)?)?(?:sin|cos|tan|csc|sec|cot)h?))\\b"
 				}
 			]
 		},
@@ -143,7 +148,7 @@
 		},
 		"numbers": {
 			"name": "constant.numeric",
-			"match": "[0-9]+|\\b(?:e|pi|π|varphi|φ)\\b"
+			"match": "-?[0-9]+|\\b(?:e|pi|π|varphi|φ)\\b"
 		}
 	},
 	"scopeName": "source.amymath"
